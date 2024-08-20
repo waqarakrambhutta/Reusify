@@ -3,7 +3,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./src/screens/HomeScreen";
 import ChatScreen from "./src/screens/ChatScreen";
-import comp from "./src/screens/comp";
 
 const Stack = createStackNavigator();
 export default function Page() {
@@ -14,7 +13,6 @@ export default function Page() {
     >
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="chatScreen" component={ChatScreen} />
-      <Stack.Screen name="comp" component={comp} />
     </Stack.Navigator>
   );
 }
