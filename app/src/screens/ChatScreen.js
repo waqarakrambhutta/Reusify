@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Button,
   TextInput,
+  ScrollView,
 } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -45,19 +46,22 @@ const ChatScreen = () => {
   const flatListRef = useRef(null);
 
   useEffect(() => {
-    if (flatListRef.current && messages.length > -1) {
+    if (flatListRef.current && messages.length > 0) {
       flatListRef.current.scrollToEnd({ animated: false });
     }
   }, [messages]);
 
   const handleSendMessage = () => {
+    if (text?.trim() === "") {
+      return;
+    }
     const postData = {
       time: Date.now().toString(),
       text: text,
     };
 
     setMessage([...message, postData]);
-    setText(null);
+    setText("");
     setTimeout(() => {
       if (flatListRef.current) {
         flatListRef.current.scrollToEnd({ animated: true });
