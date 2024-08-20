@@ -18,16 +18,6 @@ const List = [
     name: "comp",
     navigateTO: "comp",
   },
-  {
-    id: 3,
-    name: "Chat Screen",
-    navigateTO: "chatScreen",
-  },
-  {
-    id: 4,
-    name: "Chat Screen",
-    navigateTO: "chatScreen",
-  },
 ];
 const HomeScreen = ({ navigation }) => {
   return (
